@@ -34,6 +34,6 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v2
         with:
-          context: .
+          context: ./.devcontainer
           push: true
           tags: ghcr.io/stuartleeks/gh-docker-test-devcontainer:latest
