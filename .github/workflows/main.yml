@@ -1,4 +1,5 @@
-# This is a basic workflow to help you get started with Actions
+# Enable GH container registry (while this is in preview, not having this enabled will cause 403 on the Docker step)
+# https://docs.github.com/en/packages/working-with-a-github-packages-registry/enabling-improved-container-support-with-the-container-registry
 
 name: CI
 
