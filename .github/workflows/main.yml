@@ -51,7 +51,7 @@ jobs:
           cache-to: type=inline
 
       - name: Perform build
-        run: go build 
+        run: go build && exit 1
 
         ## TODO - might be better just to run a script to `docker push` at this point?
       - name: Push devcontainer
