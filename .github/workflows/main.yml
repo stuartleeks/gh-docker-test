@@ -39,7 +39,20 @@ jobs:
           username: ${{ github.repository_owner }}
           password: ${{ secrets.GITHUB_TOKEN }}        
           
-      - name: Build and push
+      - name: Build devcontainer
+        uses: docker/build-push-action@v2
+        env:
+          DOCKER_BUILDKIT: '1'
+        with:
+          context: ./.devcontainer
+          push: false
+          tags: ghcr.io/stuartleeks/gh-docker-test-devcontainer:latest
+          cache-from: type=registry,ref=ghcr.io/stuartleeks/gh-docker-test-devcontainer:latest
+          cache-to: type=inline
+
+
+        ## TODO - might be better just to run a script to `docker push` at this point?
+      - name: Push devcontainer
         uses: docker/build-push-action@v2
         env:
           DOCKER_BUILDKIT: '1'
