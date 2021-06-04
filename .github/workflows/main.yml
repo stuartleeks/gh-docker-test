@@ -49,6 +49,10 @@ jobs:
           tags: ghcr.io/stuartleeks/gh-docker-test-devcontainer:latest
           cache-from: type=registry,ref=ghcr.io/stuartleeks/gh-docker-test-devcontainer:latest
           cache-to: type=inline
+          build-args: |
+            VARIANT=1.16
+            INSTALL_NODE=false
+            NODE_VERSION=lts/*
 
       - name: Perform build
         env:
@@ -66,3 +70,7 @@ jobs:
           tags: ghcr.io/stuartleeks/gh-docker-test-devcontainer:latest
           cache-from: type=registry,ref=ghcr.io/stuartleeks/gh-docker-test-devcontainer:latest
           cache-to: type=inline
+          build-args: |
+            VARIANT=1.16
+            INSTALL_NODE=false
+            NODE_VERSION=lts/*
