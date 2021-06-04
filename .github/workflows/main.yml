@@ -54,10 +54,10 @@ jobs:
             INSTALL_NODE=false
             NODE_VERSION=lts/*
 
-      - name: Perform build
-        env:
-          DOCKER_BUILDKIT: '1'
-        run: docker run ghcr.io/stuartleeks/gh-docker-test-devcontainer:latest go build
+      # - name: Perform build
+      #   env:
+      #     DOCKER_BUILDKIT: '1'
+      #   run: docker run ghcr.io/stuartleeks/gh-docker-test-devcontainer:latest go build
 
         ## TODO - might be better just to run a script to `docker push` at this point?
       - name: Push devcontainer
